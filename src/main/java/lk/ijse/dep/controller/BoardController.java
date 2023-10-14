@@ -16,6 +16,8 @@ import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import lk.ijse.dep.service.*;
 
+import static lk.ijse.dep.service.Piece.*;
+
 public class BoardController implements BoardUI {
 
     private static final int RADIUS = 42;
@@ -109,7 +111,7 @@ public class BoardController implements BoardUI {
             case EMPTY:
                 lblStatus.setText("Game is tied !");
         }
-        if (winner.getWinningPiece() != Piece.EMPTY) {
+        if (winner.getWinningPiece() != EMPTY) {
             VBox vCol = (VBox) grpCols.lookup("#col" + winner.getCol1());
             Rectangle rect = new Rectangle((winner.getCol2() - winner.getCol1() + 1) * vCol.getWidth(),
                     (winner.getRow2() - winner.getRow1() + 1) * (((RADIUS + 2) * 2)));
